@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.4.0",
+    "babel-loader": "^8.0.5",
+    "firebase": "^5.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-firebase": "^2.2.8",
+    "react-scripts": "2.1.8",
+    "webpack": "^4.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

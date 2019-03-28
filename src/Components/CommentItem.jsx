@@ -3,7 +3,6 @@ import firebasedb from '../config/fbConfig';
 
 
 const database = firebasedb.database();
-const commentsReference = database.ref('comments');
 
 
 class CommentItem extends React.Component {
@@ -21,7 +20,7 @@ class CommentItem extends React.Component {
     removeComment(e){
         //removes comment from FB
         database.ref('comments/' + this.state.commentid ).remove();
-        //removes comment from DOM
+
         const elem = e.target.parentElement;
         elem.parentNode.removeChild(elem);
     }

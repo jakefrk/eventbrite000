@@ -2,9 +2,11 @@
 .App {
   
 }
-
+.logo{padding:1em;}
+label{font-size:14px}
  
 .App-header {
+  padding:1.3em 0;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -13,6 +15,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom:2em;
 }
 
 .App-link {

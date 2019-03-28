@@ -1,38 +1,47 @@
 import React from 'react';
 
 
-let category = "101";
+class Categories extends React.Component {
+    constructor(props) {
+        super();
 
-function selectCategory(){
-    // switch (buttonValu) {
-    //     case 'MUSIC':
-    //       console.log('102');
-    //       category = "102";
-    //       break;
-    //     case 'BUSINESS':
-    //       console.log('103');
-    //       category = "103";
-    //       break;
-    //     case 'OUTDOORS':
-    //       console.log('104');
-    //       category = "104";
-    //       break;
-    //     default:
-    //       console.log('Sorry');
-    //   }
-}
+        this.state = {
+           category: "120"
+          };
+        
+          this.handleChange = this.handleChange.bind(this)
+    }    
+    handleChange(event){
+        console.log(event.target.value)
+        this.setState({
+            category: event.target.value
+        })
+    }
+ 
 
-const Categories = () =>{
-
-    return(
+    render(){ 
+        return(
         <div className="categories" >
-            <button onClick={selectCategory}>BUSINESS</button>
-            <button onClick={selectCategory}>MUSIC</button>
-              
+        <label>SELECT A CATEGORY: </label>
+            <select
+                value={this.state.category} 
+                onChange={this.handleChange}
+                name="category"
+                >
+                <option value="103">PARTY</option>
+                <option value="108">SPORTS</option>
+                <option value="101">BUSINESS</option>
+            </select> 
         </div>
-    )
-
+        )
+    }
 }
+
+
+
+
+
+ 
 
 export default Categories;
 

@@ -7,16 +7,7 @@ let commentArray = [];
 
 const database = firebasedb.database();
 const commentsReference = database.ref('comments');
- 
-// commentsReference.on('value', function (snapshot) {
-//   if (snapshot.val()){ 
-//       const firebaseComments = Object.values(snapshot.val())
-//         firebaseComments.forEach(function(comment){ 
-//             commentArray.push(comment); 
-//           });
-//     }
-// }); 
-  
+
  
 function snapshotToArray(snapshot) {   // credit: https://ilikekillnerds.com/2017/05/convert-firebase-database-snapshotcollection-array-javascript/
   snapshot.forEach(function(childSnapshot) {
@@ -85,16 +76,14 @@ class CommentForm extends React.Component {
            <div className="section">
               <form className="field has-addons" onSubmit={this.handleSubmit}>
                   <div className="control">
-                   
                     <input type="text"required className="input is-info" placeholder="leave a comment"/>
                   </div>
                 <div className="control">
                    <input type="submit" className="button is-info" value="Submit" />
-              
                 </div>
                 </form>
                    {renderedComments}
-                   </div>
+            </div>
         )
       }
 

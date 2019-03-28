@@ -1,14 +1,15 @@
 import React, { Component } from 'react'; 
 import Loader from './Components/Loader';
 import Header from './Components/Header';
-import './App.css';
-/////////////////
-import eventbriteURL from './eventbrite';
-//import user from './user';
-// import firebasedb from './config/fbConfig';
-// import Categories from './Components/Categories';
+import './App.css';  
 import List from './Components/List';
 
+
+
+const anonOAuth = '6FSVC2IOJQW2VUCI7IBL'; 
+const eventbriteBase = `https://www.eventbriteapi.com/v3/events/search/`;
+const category = "102"
+const eventbriteURL = `${eventbriteBase}?location.within=1mi&location.latitude=40.758896&location.longitude=-73.985130&categories=${category}&start_date.keyword=this_week&include_all_series_instances=on&token=${anonOAuth}`
 
 
 
@@ -53,7 +54,7 @@ class App extends Component {
     return (
   
       <div className="App">
-        <Header />
+        <Header />  
         {this.renderEventbrite()} 
       </div>
     );
